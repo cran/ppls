@@ -3,34 +3,28 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Prediction for Penalized Partial Least Squares}
 \description{
-  Given an object returned by the function \code{\link{penalized.pls}}, this function
-  predicts the response for new data, with different numbers of components (as specified
-when running \code{\link{penalized.pls}}). 
+  Given a penalized.pls. object, and  new data, this function
+  predicts the response for all components. 
 }
 \usage{
 new.penalized.pls(ppls, Xtest, ytest = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{ppls}{An object returned from \code{\link{penalized.pls}}}
-  \item{Xtest}{A matrix of new input data with the same number of columns as the matrix \code{X}
-given as an argument of the function \code{\link{penalized.pls}} to construct \code{ppls}.}
-  \item{ytest}{The numeric vector of new response data, optional. Its length must equal the number of
-rows of \code{Xtest}.}
+  \item{ppls}{Object returned from penalized.pls}
+  \item{Xtest}{matrix of new input data}
+  \item{ytest}{vector of new response data, optional}
 }
 \details{
-  The function \code{\link{penalized.pls}} simply returns the intercepts and regression
-  coefficients for all penalized PLS components up to \code{ncomp} which is
-  specified as an argument. The function \code{new.penalized.pls} then computes the estimated response
-  using these regression vectors. If \code{ytest} is given, the mean squared
-  errors for all number of components are computed as well.
+  Penalized.pls simply returns the intercepts and regression
+  coefficients for all penalized PLS components up to \code{ncomp} as
+  specified in the function \code{penalized.pls}. \code{new.penalized.pls} then computes the estimated response
+  based on these regression vectors. If \code{ytest} is given, the mean squared
+  error for all components are computed as well.
 }
 \value{
-  \item{ypred}{The matrix of predicted responses. The number of rows equals the number of rows of \code{Xtest}, whereas
-the number of columns equals the \code{ncomp} argument given to the function \code{penalized.pls} while
-constructing the object \code{ppls}.
-}
-  \item{mse}{vector of mean squared errors, if \code{ytest} (giving the true response) is provided.}
+  \item{ypres}{matrix of responses}
+  \item{mse}{vector of mean squared errors, if ytest is provided.}
 
 }
 \references{N. Kraemer, A.-L. Boulesteix, G. Tutz (2007) "Penalized

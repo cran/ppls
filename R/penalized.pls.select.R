@@ -1,5 +1,5 @@
-`penalized.pls.default` <-
-function(X,y,M,ncomp){
+`penalized.pls.select` <-
+function(X,y,M,ncomp,blocks){
 
   X0<-X
 
@@ -12,7 +12,16 @@ function(X,y,M,ncomp){
   for (i in 1:ncomp){
 
       ww<-M%*%t(X)%*%y
-      # ww=normalize.vector(ww)
+      # select optimal blocks
+      score<-vector(length=max(blocks))
+      for (k in 1:length(score)){
+        score[k]=mean(ww[blocks==k]^2)
+      }
+      k.max<-which.max(score)
+      w<-ww*0
+      w[blocks==k.max]=ww[blocks==k.max]
+      ww<-normalize.vector(w)
+      #
       tt<-X%*%ww
       length.tt[i]=sqrt(sum(tt^2))
       tt=normalize.vector(tt)
@@ -23,7 +32,6 @@ function(X,y,M,ncomp){
     B=matrix(,ncol(X),ncomp)
         RR=matrix(t(TT)%*%X0%*%WW,nrow=ncomp) # the bidiagonal matrix
         RR[row(RR)>col(RR)]<-0 # inserted for numerical stability
-        RR[row(RR)< col(RR) -1]<-0 # inserted for numerical stability
         LL=backsolve(RR,diag(ncomp))
       Wtilde=WW%*%LL
         B=matrix(,ncol(X),ncomp)

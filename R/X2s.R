@@ -9,8 +9,12 @@ function(X,Xtest=NULL,deg=3,nknot=NULL,reduce.knots=FALSE){
     compute.knots<-function(x,nknot,deg){
         xl<-min(x);
         xr<-max(x);
-        xmin<-xl-(xr-xl)/100
-        xmax<-xr+(xr-xl)/100
+	a<-xr-xl
+	if (a==0){
+		a<-1
+	}
+        xmin<-xl-a/100
+        xmax<-xr+a/100
         dx<-(xmax-xmin)/(nknot-1)
         knots<-seq(xmin-deg*dx,xmax+deg*dx,by=dx)
         return(knots)
@@ -71,35 +75,40 @@ function(X,Xtest=NULL,deg=3,nknot=NULL,reduce.knots=FALSE){
   for (j in 1:p){
   if (reduce.knots==TRUE){
   too.many.knots=TRUE
-  while (too.many.knots==TRUE){
+  while ((too.many.knots==TRUE) & (nknots[j]>deg+1)){
   too.many.knots=FALSE
     knotsj<-compute.knots(X[,j],nknots[j],deg)
 
+    #Zj<-spline.des(knots=knotsj,x=X[,j],ord=deg+1,outer.ok=TRUE)$design
     Zj<-splineDesign(knots=knotsj,x=X[,j],ord=deg+1,outer.ok=TRUE)
-    
 
+    #Zjtest<-spline.des(knots=knotsj,x=Xtest[,j],ord=deg+1,outer.ok=TRUE)$design
     Zjtest<-splineDesign(knots=knotsj,x=Xtest[,j],ord=deg+1,outer.ok=TRUE)
     if (min(apply(Zj^2,2,sum))==0){
   
     too.many.knots=TRUE
     nknots[j]=nknots[j]-1
     }
-    else{
+}
+    if (nknots[j]==deg+1){
+	nknots[j]=nknots[j]+1
+        knotsj<-compute.knots(X[,j],nknots[j],deg)
+	Zj<-splineDesign(knots=knotsj,x=X[,j],ord=deg+1,outer.ok=TRUE)
+
+    #Zjtest<-spline.des(knots=knotsj,x=Xtest[,j],ord=deg+1,outer.ok=TRUE)$design
+    Zjtest<-splineDesign(knots=knotsj,x=Xtest[,j],ord=deg+1,outer.ok=TRUE)
+	}
     Z=cbind(Z,Zj)
     Ztest=cbind(Ztest,Zjtest)
     sizeZ[j]=ncol(Zj)
     }
-    
-
-  }
-  }
   else{
   knotsj<-compute.knots(X[,j],nknots[j],deg)
 
-    Zj<-splineDesign(knots=knotsj,x=X[,j],ord=deg+1,outer.ok=TRUE)
+    Zj<-spline.des(knots=knotsj,x=X[,j],ord=deg+1,outer.ok=TRUE)$design
     
 
-    Zjtest<-splineDesign(knots=knotsj,x=Xtest[,j],ord=deg+1,outer.ok=TRUE)
+    Zjtest<-spline.des(knots=knotsj,x=Xtest[,j],ord=deg+1,outer.ok=TRUE)$design
     Z=cbind(Z,Zj)
     Ztest=cbind(Ztest,Zjtest)
     sizeZ[j]=ncol(Zj)

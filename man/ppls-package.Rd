@@ -21,8 +21,6 @@ estimation of generalized additive models and functional data. More
 details can be found in Kraemer, Boulesteix, and Tutz (2007).  
 }
 \author{Nicole Kraemer <nkraemer@cs.tu-berlin.de>
-  
-  Anne-Laure Boulesteix <boulesteix@slcmsr.org>
 }
 \references{
 N. Kraemer, A.-L. Boulesteix, G. Tutz (2007) "Penalized

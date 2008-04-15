@@ -3,14 +3,14 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Normalization of a vector}
 \description{
-  This function normalizes a vector to unit length.
+  normalizes a vector to unit length
 }
 \usage{
 normalize.vector(v)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{v}{A numeric vector}
+  \item{v}{vector}
 }
 
 \value{normalized vector 

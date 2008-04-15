@@ -1,5 +1,5 @@
 `penalized.pls` <-
-function(X,y,P=NULL,ncomp=NULL,kernel=FALSE,scale=FALSE){
+function(X,y,P=NULL,ncomp=NULL,kernel=FALSE,scale=FALSE,blocks=1:ncol(X),select=FALSE){
 
   p<-ncol(X)
 
@@ -27,7 +27,13 @@ function(X,y,P=NULL,ncomp=NULL,kernel=FALSE,scale=FALSE){
 
   M<-solve(Minv)
 
-  if (kernel==TRUE) ppls=penalized.pls.kernel(X,y,M,ncomp) else ppls=penalized.pls.default(X,y,M,ncomp)
+  if (select==FALSE){  
+
+	if (kernel==TRUE) ppls=penalized.pls.kernel(X,y,M,ncomp); 
+	if (kernel==FALSE)  ppls=penalized.pls.default(X,y,M,ncomp);
+}
+if (select==TRUE) ppls=penalized.pls.select(X,y,M,ncomp,blocks)
+  
   
   coefficients=ppls$coefficients /(sdx %*%t(rep(1,ncol(ppls$coefficients))))
   

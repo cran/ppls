@@ -28,7 +28,7 @@ function(X,y,P=NULL,lambda=1,ncomp=NULL,k=5,kernel=FALSE,scale=FALSE){
   lambda.opt=lambda[which.min(value1)]
   ncomp.opt=which.min(error.cv[lambda==lambda.opt,])
   min.ppls=min(value1)
-  ppls=penalized.pls(X,y,P*lambda.opt,ncomp=ncomp.opt,kernel=kernel,scale=scale)
+  ppls=penalized.pls(X,y,P*lambda.opt,ncomp=ncomp.opt,kernel)
   intercept=ppls$intercept[ncomp.opt]
   coefficients=ppls$coefficients[,ncomp.opt]
   return(list(lambda.opt=lambda.opt,ncomp.opt=ncomp.opt,min.ppls=min.ppls,intercept=intercept,coefficients=coefficients))

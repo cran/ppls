@@ -2,28 +2,35 @@
 \alias{ppls.splines.cv}
 \title{Cross-validation for penalized PLS based on Splines Transformations}
 \description{
-  This function computes the nonlinear-regression model for penalized PLS based on
-  B-Splines Transformations.
+  Computes the nonlinear-regression model for penalized PLS based on
+  B-Splines Transformations
 }
 \usage{
-ppls.splines.cv(X, y, lambda, ncomp, degree, order, nknot, k, kernel)
+ppls.splines.cv(X, y, lambda, ncomp, degree, order, nknot, k, kernel,scale,reduce.knots,select)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{X}{A n x p matrix of input data.}
-  \item{y}{A numeric n-vector of responses.}
-  \item{lambda}{A numeric vector giving the (positive) candidate values for the parameter lambda 
-  determining the amount of penalization. Default value is 1.}
-  \item{ncomp}{The number of PLS components, default value is
-    \code{min(nrow(X)-1,ncol(Z))}, where \code{Z} denotes the transformed data
-    obtained from the function \code{\link{X2s}}.}
-  \item{degree}{The degree of the splines. Default value is 3.}
-  \item{order}{The order of the differences to be computed for the penalty
+  \item{X}{matrix of input data}
+  \item{y}{vector of response data}
+  \item{lambda}{vector of candidate parameters lambda for the penalty
+    term. Default value is 1}
+  \item{ncomp}{Number of PLS components, default value is
+    min(nrow(X)-1,ncol(Z)), where Z denotes the transformed data
+    obtained from the function \code{X2s} }
+  \item{degree}{Degree of the splines. Default value is 3}
+  \item{order}{Order of the differences to be computed for the penalty
     term. Default value is 2.}
-  \item{nknot}{The number of knots. Default value is 20 for all variables.}
-   \item{k}{The number of splits in  \code{k}-fold cross-validation. Default value is \code{k}=5. }
-  \item{kernel}{If \code{kernel=TRUE}, the kernelized version of
-  penalized PLS is computed. Default value is \code{kernel=FALSE}.}
+  \item{nknot}{number of knots. Default value is 20 for all variables.}
+   \item{k}{the number of splits in  \code{k}-fold cross-validation. Default value is \code{k}=5. }
+  \item{kernel}{Logical value. If kernel=TRUE, the kernelized version of
+    penalized PLS is computed. Default value is kernel=FALSE}
+   \item{scale}{logical value. I scale=TRUE, the X variables are
+    standardized to have unit variance. Default value is FALSE}
+  \item{reduce.knots}{Logical variable. If \code{TRUE}, the function
+    assures that there the transformed data does not contain a constant
+    column.  Default value is \code{FALSE}. }
+  \item{select}{Logical value. If \code{select=TRUE}, the function
+    fits only one variable per iteration. }
 }
 \details{This function computes the cv-optimal nonlinear regression
   model with Penalized Partial Least Squares. In a nutshell, the
@@ -32,8 +39,7 @@ model for the columns of \code{X}, each additive component is expanded in terms 
 amount of B-Splines basis functions. The basis functions are determined
 via their \code{degree} and  \code{nknot}, the number of knots. In order to prevent
 overfitting,  the additive  model is estimated via penalized PLS, where
-the penalty term penalizes the differences of a specified \code{order} within each original variable. 
-See Kraemer, Boulesteix, and Tutz (2007) for details.
+the penalty term penalizes the differences of a specified \code{order}. Consult Kraemer, Boulesteix, and Tutz (2007) for details.
 }
 \value{
   \item{lambda.opt }{Optimal value of lambda}

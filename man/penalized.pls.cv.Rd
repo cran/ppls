@@ -2,7 +2,7 @@
 \alias{penalized.pls.cv}
 \title{Cross-validation for penalized PLS}
 \description{
-  This function computes the cross-validated error of penalized PLS for different values of
+  Computes the cross-validated error of penalized PLS for different values of
   lambda and  components, and returns the parameter values and
   coefficients for the optimal model.
 }
@@ -11,31 +11,31 @@ penalized.pls.cv(X, y, P, lambda, ncomp, k, kernel,scale)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{X}{A n x p matrix of input data, with observations corresponding to the rows and variables to the columns.}
-  \item{y}{A numeric n-vector of responses.}
-  \item{P}{The p x p penalty matrix. For the default value \code{P=NULL}, no penalty term is used,
+  \item{X}{matrix of input data}
+  \item{y}{vector of responses}
+  \item{P}{Penalty matrix. For the default value \code{P=NULL}, no penalty term is used,
     i.e. ordinary PLS is computed.}
-  \item{lambda}{A numeric vector giving the (positive) candidate values for the parameter lambda 
-  determining the amount of penalization. Default value is 1.}
-  \item{ncomp}{The maximum number of penalized PLS components to be
-    computed. Default value is \code{min(nrow(X)-1,ncol(X))}.}
-  \item{k}{The number of splits in  \code{k}-fold cross-validation. Default value is \code{k}=5. }
-  \item{kernel}{If \code{kernel=TRUE}, the kernelized version of
-    penalized PLS is computed. Default value is \code{kernel=FALSE}.}
-  \item{scale}{If \code{scale=TRUE}, the \code{X} variables are
-    standardized to have unit variance. Default value is \code{scale=FALSE}.}
+  \item{lambda}{vector of candidate parameters lambda for the amount of
+    penalization. Default value is 1 }
+  \item{ncomp}{Number of penalized PLS components to be
+    computed. Default value is min(nrow(X)-1,ncol(X))}
+  \item{k}{the number of splits in  \code{k}-fold cross-validation. Default value is \code{k}=5. }
+  \item{kernel}{Logical value. If \code{kernel=TRUE}, the kernelized version of
+    penalized PLS is computed. Default value is \code{kernel=FALSE}}
+  \item{scale}{logical value. I scale=TRUE, the X variables are
+    standardized to have unit variance. Default value is FALSE}
 }
 \details{
 }
 \value{
-  \item{lambda.opt }{The optimal value of the parameter lambda.}
-  \item{ncomp.opt}{The optimal number of penalized PLS components.}
-  \item{min.ppls}{The cross-validated error for the optimal penalized PLS
-    solution.}
-  \item{intercept}{The intercept for the optimal model, computed on the
-    whole data set.}
-  \item{coefficients}{The regression coefficients for the optimal model,
-    computed on the whole data set.}
+  \item{lambda.opt }{Optimal value of lambda}
+  \item{ncomp.opt}{Optimal number of penalized PLS components}
+  \item{min.ppls}{Cross-validated error for the optimal penalized PLS
+    solution}
+  \item{intercept}{Intercept for the optimal model, computed on the
+    whole data set}
+  \item{coefficients}{Regression coefficients for the optimal model,
+    computed on the whole data set}
 
 }
 \references{N. Kraemer, A.-L. Boulesteix, G. Tutz (2007) "Penalized
