@@ -1,28 +1,33 @@
 `penalized.pls.kernel` <-
-function(X,y,M,ncomp){
-
-  yhat=y*0
-
-  K=X%*%M%*%t(X)
-  UU=c()
-  TT=c()
+function(X,y,M=NULL,ncomp){
+  n=nrow(X)
+  yhat=rep(0,n)
+  if (is.null(M)==TRUE){
+	K=X%*%t(X)
+  }
+  if (is.null(M)==FALSE){
+  	K=X%*%M%*%t(X)
+  }
+  UU=matrix(,n,ncomp)
+  TT=matrix(,n,ncomp)
   for (i in 1:ncomp){
-
         uu=y-yhat
         uu=uu/sqrt(sum((K%*%uu)*uu))
-        UU=cbind(UU,uu)
+        UU[,i]=uu
         if (i==1) tt=K%*%uu else {
-            tt=(diag(nrow(X))- TT%*%t(TT))%*%K%*%uu
+            TTi=TT[,1:(i-1),drop=FALSE]
+            Kuu=K%*%uu
+            tt=Kuu - TTi %*%(t(TT)%*%Kuu)
             # Theoretically, we do not need the projection TT%*%t(TT) on ALL of the components but
             # only the projection tt%*%t(tt) on the last component (see the equation above algorithm
             # 3 in our paper) 
             # but to ensure pairwise orthogonality, we use the projection TT%*%t(TT)
             if (floor(i/5)==i/5){
-                tt=tt-TT%*%t(TT)%*%tt # after a while, the components are not orthogonal anymore ....
+                tt=tt-TTi%*%(t(TTi)%*%tt) # after a while, the components are not orthogonal anymore ....
             }
         }
         tt=normalize.vector(tt)
-        TT=cbind(TT,tt)
+        TT[,i]=tt
         yhat=yhat + sum(tt*y) * tt
     }
     RR=t(TT)%*%K%*%UU
@@ -32,9 +37,12 @@ function(X,y,M,ncomp){
     AA=matrix(,nrow(X),ncomp)
     for (i in 1:ncomp){
         Li=LL[1:i,1:i,drop=FALSE]
-        AA[,i]= UU[,1:i,drop=FALSE]%*%Li%*%t(TT[,1:i,drop=FALSE])%*%y
+        AA[,i]= UU[,1:i,drop=FALSE]%*%(Li%*%(t(TT[,1:i,drop=FALSE])%*%y))
     }
-    coefficients=M%*%t(X)%*%AA
+    coefficients=t(X)%*%AA
+	if (is.null(M)==FALSE){
+	coefficients=M%*%coefficients	
+}
   return(list(coefficients=coefficients))
 
 }

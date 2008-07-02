@@ -15,7 +15,7 @@ normalize.vector(v)
 
 \value{normalized vector 
 }
-\author{Nicole Kraemer}
+\author{Nicole Kr\"amer}
 \note{This is an auxiliary function.
 }
 \examples{

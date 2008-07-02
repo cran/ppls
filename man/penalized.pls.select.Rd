@@ -14,7 +14,7 @@ penalized.pls.select(X, y, M, ncomp,blocks)
 \arguments{
   \item{X}{matrix of centered and (possibly) scaled input data }
   \item{y}{vector of centered and (possibly) scaled response data}
-  \item{M}{matrix that is a transformation of  the penalty term P}
+  \item{M}{matrix that is a transformation of  the penalty term P. Default is \code{M=NULL}, which corresponds to no penalization.}
   \item{ncomp}{number of PLS components}
   \item{blocks}{vector of length \code{ncol(X)} that encodes the block
     structure of \code{X}.}
@@ -25,21 +25,18 @@ penalized.pls.select(X, y, M, ncomp,blocks)
   as the inverse of \eqn{(I + P)} .  The
   computation of the regression coefficients is based on an extension of
   the classical NIPALS algorithm for PLS. Moreover, in each iteration,
-  the weight vector is only defined by one block of variables.  For more details, see Kraemer,
-  Boulesteix,  and Tutz (2007). 
+  the weight vector is only defined by one block of variables.  For more details, see Kr\"amer,
+  Boulesteix,  and Tutz (2008). 
 }
 
 \value{
   \item{coefficients}{Penalized PLS coefficients for all 1,2,...,ncomp components }
 
 }
-\references{N. Kraemer, A.-L. Boulesteix, G. Tutz (2007) "Penalized
-  Partial Least Squares with Applications to B-Splines Transformations
-  and Functional Data", preprint
-
-  available at \url{http://ml.cs.tu-berlin.de/~nkraemer/publications.html}}
-\author{Nicole Kraemer}
-\note{This is an internal function that is called by penalized.pls.}
+\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009}
+\author{Nicole Kr\"amer}
+\note{This is an internal function that is called by \code{\link{penalized.pls}}.}
 \seealso{\code{\link{penalized.pls}}, \code{\link{ppls.splines.cv}}}
 \examples{
 # this is an internal function}

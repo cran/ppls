@@ -1,9 +1,9 @@
 \name{X2s}
 \alias{X2s}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Nolinear transformation via B-splines}
+\title{Nolinear Transformation via B-splines}
 \description{This function transforms each column of a matrix using a
-  set of B-splines functions.
+  set of B-spline functions.
 }
 \usage{
 X2s(X, Xtest = NULL, deg = 3, nknot = NULL,reduce.knots=FALSE)
@@ -46,15 +46,12 @@ not occur anymore. Note that the
 must be minimum number of knots. If \code{nknot} contains too few knots,
 the function automatically increases the number. 
 }
-\references{C. de Boor (1978) "A practical guide to splines", Springer.
+\references{C. de Boor (1978) \emph{A Practical Guide to Splines}, Springer.
 
-  N. Kraemer, A.-L. Boulesteix, G. Tutz (2007) "Penalized
-  Partial Least Squares with Applications to B-Splines Transformations
-  and Functional Data", preprint
-
-  available at \url{http://ml.cs.tu-berlin.de/~nkraemer/publications.html}
+  N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009
 }
-\author{Nicole Kraemer}
+\author{Nicole Kr\"amer}
 \seealso{\code{\link{ppls.splines.cv}}}
 \examples{
 X<-matrix(rnorm(100),ncol=5)

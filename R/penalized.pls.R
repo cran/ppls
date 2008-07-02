@@ -4,8 +4,6 @@ function(X,y,P=NULL,ncomp=NULL,kernel=FALSE,scale=FALSE,blocks=1:ncol(X),select=
   p<-ncol(X)
 
   y<-as.vector(y)
-  
-  if (is.null(P)) P=matrix(0,p,p)
 
   meanx=apply(X,2,mean)
 
@@ -23,9 +21,14 @@ function(X,y,P=NULL,ncomp=NULL,kernel=FALSE,scale=FALSE,blocks=1:ncol(X),select=
 
   y<-scale(y,center=TRUE,scale=FALSE)
 
+   M=NULL
+
+  if (is.null(P)==FALSE){
+
   Minv<-diag(p)+P
 
   M<-solve(Minv)
+}
 
   if (select==FALSE){  
 

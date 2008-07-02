@@ -45,5 +45,5 @@ function(X,y,lambda=1,ncomp=NULL,degree=3,order=2,nknot=NULL,k=5,kernel=FALSE,sc
   lambda.opt=lambda[which.min(value1)]
   ncomp.opt=which.min(error.cv[lambda==lambda.opt,])
   min.ppls=min(value1)
-  return(list(min.ppls=min.ppls,lambda.opt=lambda.opt,ncomp.opt=ncomp.opt))
+  return(list(error.cv=error.cv,min.ppls=min.ppls,lambda.opt=lambda.opt,ncomp.opt=ncomp.opt))
 }

@@ -18,16 +18,17 @@ components are then used in a least-squares fit instead of
 \eqn{X}. For a quadratic penalty term on \eqn{w}, Penalized Partial Least Squares constructs latent components
 that maximize the penalized covariance. Applications include the
 estimation of generalized additive models and functional data. More
-details can be found in Kraemer, Boulesteix, and Tutz (2007).  
-}
-\author{Nicole Kraemer <nkraemer@cs.tu-berlin.de>
-}
-\references{
-N. Kraemer, A.-L. Boulesteix, G. Tutz (2007) "Penalized
-  Partial Least Squares with Applications to B-Splines Transformations
-  and Functional Data", preprint
+details can be found in Kr\"amer, Boulesteix, and Tutz (2008).  
 
-  available at \url{http://ml.cs.tu-berlin.de/~nkraemer/publications.html}
+The package also contains a data set from Near-Infrared Spectroscopy (Osborne et.al., 1984).
+}
+\author{Nicole Kr\"amer <nkraemer@cs.tu-berlin.de>
+}
+\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009
+
+
+B.G. Osborne, T. Fearn, A.R. Miller, and S. Douglas (1984) \emph{Application of Near-Infrared Reflectance Spectroscopy to Compositional Analysis of Biscuits and Biscuit Dough}. Journal of the Science of Food and Agriculture, 35, pp. 99 - 105.
 }
 
 \keyword{ package }

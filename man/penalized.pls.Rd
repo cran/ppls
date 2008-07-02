@@ -5,7 +5,7 @@
   computes the regression coefficients for Penalized Partial Least Squares.
 }
 \usage{
-penalized.pls(X, y, P = NULL, ncomp = NULL, kernel = FALSE, scale = FALSE,blocks=1:ncol(X),select=FALSE)
+penalized.pls(X, y, P, ncomp, kernel, scale ,blocks,select)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -16,7 +16,7 @@ penalized.pls(X, y, P = NULL, ncomp = NULL, kernel = FALSE, scale = FALSE,blocks
   \item{ncomp}{number of components, default value is min(ncol(p),nrow(X)-1)}
   \item{kernel}{logical value. If kernel=TRUE, penalized PLS is computed
   based on the kernel algorithm. Default value is kernel=FALSE}
-  \item{scale}{logical value. I scale=TRUE, the X variables are
+  \item{scale}{logical value. If scale=TRUE, the X variables are
     standardized to have unit variance. Default value is FALSE}
   \item{blocks}{vector of length \code{ncol(X)} that encodes a block
     structure of the data. Default value is \code{1:ncol(X)}. See below
@@ -49,12 +49,9 @@ penalized.pls(X, y, P = NULL, ncomp = NULL, kernel = FALSE, scale = FALSE,blocks
     column corresponds to the regressions coefficients for penalized
     PLS with i components}
 }
-\references{N. Kraemer, A.-L. Boulesteix, G. Tutz (2007) "Penalized
-  Partial Least Squares with Applications to B-Splines Transformations
-  and Functional Data", preprint
-
-  available at \url{http://ml.cs.tu-berlin.de/~nkraemer/publications.html}}
-\author{Nicole Kraemer}
+\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009}
+\author{Nicole Kr\"amer}
 \seealso{\code{\link{new.penalized.pls}},
   \code{\link{penalized.pls.cv}}, \code{\link{ppls.splines.cv}},
   \code{\link{Penalty.matrix}}}

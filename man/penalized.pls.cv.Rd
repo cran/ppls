@@ -1,6 +1,6 @@
 \name{penalized.pls.cv}
 \alias{penalized.pls.cv}
-\title{Cross-validation for penalized PLS}
+\title{Cross-validation for Penalized PLS}
 \description{
   Computes the cross-validated error of penalized PLS for different values of
   lambda and  components, and returns the parameter values and
@@ -22,12 +22,13 @@ penalized.pls.cv(X, y, P, lambda, ncomp, k, kernel,scale)
   \item{k}{the number of splits in  \code{k}-fold cross-validation. Default value is \code{k}=5. }
   \item{kernel}{Logical value. If \code{kernel=TRUE}, the kernelized version of
     penalized PLS is computed. Default value is \code{kernel=FALSE}}
-  \item{scale}{logical value. I scale=TRUE, the X variables are
+  \item{scale}{logical value. If scale=TRUE, the X variables are
     standardized to have unit variance. Default value is FALSE}
 }
 \details{
 }
 \value{
+   \item{error.cv}{matrix of cross-validated errors. The rows correspond to the values of lambda, the columns correspond to the number of components.}
   \item{lambda.opt }{Optimal value of lambda}
   \item{ncomp.opt}{Optimal number of penalized PLS components}
   \item{min.ppls}{Cross-validated error for the optimal penalized PLS
@@ -38,12 +39,9 @@ penalized.pls.cv(X, y, P, lambda, ncomp, k, kernel,scale)
     computed on the whole data set}
 
 }
-\references{N. Kraemer, A.-L. Boulesteix, G. Tutz (2007) "Penalized
-  Partial Least Squares with Applications to B-Splines Transformations
-  and Functional Data", preprint
-
-  available at \url{http://ml.cs.tu-berlin.de/~nkraemer/publications.html}}
-\author{Nicole Kraemer}
+\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009}
+\author{Nicole Kr\"amer}
 
 \seealso{\code{\link{ppls.splines.cv}},\code{\link{penalized.pls}},\code{\link{new.penalized.pls}}}
 \examples{

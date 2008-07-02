@@ -37,12 +37,9 @@ sim.data.ppls(ntrain,ntest,stnr,p,a=NULL,b=NULL)
   \item{a}{vector that determines the nonlinear function}
   \item{b}{vector that determines the nonlinear function}
 }
-\references{N. Kraemer, A.-L. Boulesteix, G. Tutz (2007) "Penalized
-  Partial Least Squares with Applications to B-Splines Transformations
-  and Functional Data", preprint
-
-  available at \url{http://ml.cs.tu-berlin.de/~nkraemer/publications.html}}
-\author{Nicole Kraemer}
+\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009}
+\author{Nicole Kr\"amer}
 \seealso{\code{\link{ppls.splines.cv}}}
 \examples{
 dummy<-sim.data.ppls(ntrain=50,ntest=200,p=16,stnr=16)

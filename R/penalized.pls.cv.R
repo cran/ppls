@@ -8,7 +8,7 @@ function(X,y,P=NULL,lambda=1,ncomp=NULL,k=5,kernel=FALSE,scale=FALSE){
   lambda=as.vector(lambda)
   if (is.null(P)==TRUE) P=matrix(0,ncol(X),ncol(X))
   error.cv=matrix(0,length(lambda),ncomp)
-  all.folds <- split(1:n, rep(1:k,length=n))
+  all.folds <- split(sample(1:n), rep(1:k,length=n))
   
   for (i in seq(k)) {
         omit <- all.folds[[i]]
@@ -17,7 +17,13 @@ function(X,y,P=NULL,lambda=1,ncomp=NULL,k=5,kernel=FALSE,scale=FALSE){
         Xtest=X[omit,,drop=FALSE]
         ytest=y[omit]
         for (j in 1:length(lambda)){
-            penpls=penalized.pls(Xtrain,ytrain,P=lambda[j]*P,ncomp,kernel=kernel,scale=scale)
+		if (is.null(P)==TRUE){
+			Pj=NULL
+		}
+		if (is.null(P)==FALSE){
+			Pj=lambda[j]*P
+		}
+            penpls=penalized.pls(Xtrain,ytrain,P=Pj,ncomp,kernel=kernel,scale=scale)
             error.cv[j,]=error.cv[j,]+ length(ytest)*(new.penalized.pls(penpls,Xtest,ytest)$mse)
         }
         
@@ -28,9 +34,15 @@ function(X,y,P=NULL,lambda=1,ncomp=NULL,k=5,kernel=FALSE,scale=FALSE){
   lambda.opt=lambda[which.min(value1)]
   ncomp.opt=which.min(error.cv[lambda==lambda.opt,])
   min.ppls=min(value1)
-  ppls=penalized.pls(X,y,P*lambda.opt,ncomp=ncomp.opt,kernel)
+	if (is.null(P)==TRUE){
+			P.opt=NULL
+		}
+		if (is.null(P)==FALSE){
+			P.opt=lambda.opt*P
+		}
+  ppls=penalized.pls(X,y,P.opt,ncomp=ncomp.opt,kernel)
   intercept=ppls$intercept[ncomp.opt]
   coefficients=ppls$coefficients[,ncomp.opt]
-  return(list(lambda.opt=lambda.opt,ncomp.opt=ncomp.opt,min.ppls=min.ppls,intercept=intercept,coefficients=coefficients))
+  return(list(error.cv=error.cv,lambda.opt=lambda.opt,ncomp.opt=ncomp.opt,min.ppls=min.ppls,intercept=intercept,coefficients=coefficients))
 
 }

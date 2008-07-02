@@ -1,9 +1,9 @@
 \name{ppls.splines.cv}
 \alias{ppls.splines.cv}
-\title{Cross-validation for penalized PLS based on Splines Transformations}
+\title{Cross-validation for penalized PLS based on Spline Transformations}
 \description{
   Computes the nonlinear-regression model for penalized PLS based on
-  B-Splines Transformations
+  B-Spline transformations.
 }
 \usage{
 ppls.splines.cv(X, y, lambda, ncomp, degree, order, nknot, k, kernel,scale,reduce.knots,select)
@@ -24,7 +24,7 @@ ppls.splines.cv(X, y, lambda, ncomp, degree, order, nknot, k, kernel,scale,reduc
    \item{k}{the number of splits in  \code{k}-fold cross-validation. Default value is \code{k}=5. }
   \item{kernel}{Logical value. If kernel=TRUE, the kernelized version of
     penalized PLS is computed. Default value is kernel=FALSE}
-   \item{scale}{logical value. I scale=TRUE, the X variables are
+   \item{scale}{logical value. If scale=TRUE, the X variables are
     standardized to have unit variance. Default value is FALSE}
   \item{reduce.knots}{Logical variable. If \code{TRUE}, the function
     assures that there the transformed data does not contain a constant
@@ -39,20 +39,18 @@ model for the columns of \code{X}, each additive component is expanded in terms 
 amount of B-Splines basis functions. The basis functions are determined
 via their \code{degree} and  \code{nknot}, the number of knots. In order to prevent
 overfitting,  the additive  model is estimated via penalized PLS, where
-the penalty term penalizes the differences of a specified \code{order}. Consult Kraemer, Boulesteix, and Tutz (2007) for details.
+the penalty term penalizes the differences of a specified \code{order}. Consult Kr\"amer, Boulesteix, and Tutz (2008) for details.
 }
 \value{
+  \item{error.cv}{matrix of cross-validated errors. The rows correspond to the values of lambda, the columns correspond to the number of components.}
   \item{lambda.opt }{Optimal value of lambda}
   \item{ncomp.opt}{Optimal number of penalized PLS components}
   \item{min.ppls}{Cross-validated error for the optimal penalized PLS
     solution}
 }
-\references{N. Kraemer, A.-L. Boulesteix, G. Tutz (2007) "Penalized
-  Partial Least Squares with Applications to B-Splines Transformations
-  and Functional Data", preprint
-
-  available at \url{http://ml.cs.tu-berlin.de/~nkraemer/publications.html}}
-\author{Nicole Kraemer}
+\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009}
+\author{Nicole Kr\"amer}
 
 \seealso{\code{\link{penalized.pls}},\code{\link{penalized.pls.cv}}}
 \examples{
