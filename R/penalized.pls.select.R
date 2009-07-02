@@ -1,5 +1,9 @@
 `penalized.pls.select` <-
 function(X,y,M=NULL,ncomp,blocks){
+    if (var(y)==0){
+        coefficients=matrix(0,ncol(X),ncomp) # if y is constant, all coefficients are zero
+        }
+    else{
 
   X0<-X
 
@@ -8,10 +12,10 @@ function(X,y,M=NULL,ncomp,blocks){
   TT<-matrix(,nrow(X),ncomp)
 
   for (i in 1:ncomp){
-	ww<-t(X)%*%y
-	if (is.null(M)==FALSE){
-		ww<-M%*%ww
-	}
+    ww<-t(X)%*%y
+    if (is.null(M)==FALSE){
+        ww<-M%*%ww
+    }
       # select optimal blocks
       score<-vector(length=max(blocks))
       for (k in 1:length(score)){
@@ -37,6 +41,8 @@ function(X,y,M=NULL,ncomp,blocks){
             Li=LL[1:i,1:i,drop=FALSE]
         B[,i]=WW[,1:i,drop=FALSE]%*%(Li%*%(t(TT[,1:i,drop=FALSE])%*%y))
     }
-  return(list(coefficients=B))
+    coefficients=B
+    }
+  return(list(coefficients=coefficients))
 
 }

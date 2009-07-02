@@ -49,7 +49,7 @@ the function automatically increases the number.
 \references{C. de Boor (1978) \emph{A Practical Guide to Splines}, Springer.
 
   N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69.
 }
 \author{Nicole Kr\"amer}
 \seealso{\code{\link{ppls.splines.cv}}}

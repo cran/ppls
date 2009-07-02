@@ -25,11 +25,10 @@ The package also contains a data set from Near-Infrared Spectroscopy (Osborne et
 \author{Nicole Kr\"amer <nkraemer@cs.tu-berlin.de>
 }
 \references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69.
 
 
 B.G. Osborne, T. Fearn, A.R. Miller, and S. Douglas (1984) \emph{Application of Near-Infrared Reflectance Spectroscopy to Compositional Analysis of Biscuits and Biscuit Dough}. Journal of the Science of Food and Agriculture, 35, pp. 99 - 105.
 }
 
 \keyword{ package }
-

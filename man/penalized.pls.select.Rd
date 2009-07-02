@@ -34,7 +34,7 @@ penalized.pls.select(X, y, M, ncomp,blocks)
 
 }
 \references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009}
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69.}
 \author{Nicole Kr\"amer}
 \note{This is an internal function that is called by \code{\link{penalized.pls}}.}
 \seealso{\code{\link{penalized.pls}}, \code{\link{ppls.splines.cv}}}

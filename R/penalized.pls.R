@@ -1,6 +1,6 @@
 `penalized.pls` <-
 function(X,y,P=NULL,ncomp=NULL,kernel=FALSE,scale=FALSE,blocks=1:ncol(X),select=FALSE){
-
+n<-nrow(X)
   p<-ncol(X)
 
   y<-as.vector(y)
@@ -9,15 +9,15 @@ function(X,y,P=NULL,ncomp=NULL,kernel=FALSE,scale=FALSE,blocks=1:ncol(X),select=
 
   meany=mean(y)
   if (scale==TRUE) {
-    sdx=sqrt(apply(X,2,var))
+    sdx = sqrt(apply(X, 2, var))
+    sdx[sdx==0]=1 # take care of columns with zero variance
     }
-    else {
+    
+  if (scale==FALSE) {
     sdx=rep(1,ncol(X))
   }
-
   if (is.null(ncomp)) ncomp=min(p,nrow(X)-1)
-
-  X<-scale(X,center=TRUE,scale=scale)
+  X<-(X-rep(1,n)%*%t(meanx))/(rep(1,n)%*%t(sdx))
 
   y<-scale(y,center=TRUE,scale=FALSE)
 
@@ -32,8 +32,8 @@ function(X,y,P=NULL,ncomp=NULL,kernel=FALSE,scale=FALSE,blocks=1:ncol(X),select=
 
   if (select==FALSE){  
 
-	if (kernel==TRUE) ppls=penalized.pls.kernel(X,y,M,ncomp); 
-	if (kernel==FALSE)  ppls=penalized.pls.default(X,y,M,ncomp);
+    if (kernel==TRUE) ppls=penalized.pls.kernel(X,y,M,ncomp); 
+    if (kernel==FALSE)  ppls=penalized.pls.default(X,y,M,ncomp);
 }
 if (select==TRUE) ppls=penalized.pls.select(X,y,M,ncomp,blocks)
   

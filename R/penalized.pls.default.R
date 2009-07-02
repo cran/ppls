@@ -1,6 +1,9 @@
 `penalized.pls.default` <-
 function(X,y,M=NULL,ncomp){
-
+    if (var(y)==0){
+        coefficients=matrix(0,ncol(X),ncomp) # if y is constant, all coefficients are zero
+        }
+    else{
   X0<-X
 
   WW<-matrix(,ncol(X),ncomp)
@@ -8,10 +11,10 @@ function(X,y,M=NULL,ncomp){
   TT<-matrix(,nrow(X),ncomp)
 
   for (i in 1:ncomp){
-	ww<-t(X)%*%y
-	if (is.null(M)==FALSE){
-		ww<-M%*%ww
-	}
+    ww<-t(X)%*%y
+    if (is.null(M)==FALSE){
+        ww<-M%*%ww
+    }
       # ww=normalize.vector(ww)
       tt<-X%*%ww
       tt=normalize.vector(tt)
@@ -29,6 +32,8 @@ function(X,y,M=NULL,ncomp){
             Li=LL[1:i,1:i,drop=FALSE]
         B[,i]=WW[,1:i,drop=FALSE]%*%(Li%*%(t(TT[,1:i,drop=FALSE])%*%y))
     }
-  return(list(coefficients=B))
+    coefficients=B
+    }
+  return(list(coefficients=coefficients))
 
 }

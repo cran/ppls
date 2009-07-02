@@ -9,10 +9,19 @@ function(X,y,lambda=1,ncomp=NULL,degree=3,order=2,nknot=NULL,k=5,kernel=FALSE,sc
   
   lambda=as.vector(lambda)
 
-  error.cv=matrix(0,length(lambda),ncomp)
-
+ 
   all.folds <- split(sample(1:n), rep(1:k,length=n))
   
+  # ensure that ncomp does not exceed the sample size on the cv splits
+  ntrain=vector(length=k)
+  for (i in 1:k){
+    ntrain[i]=n-length(all.folds[[i]])
+  }
+  ntrain.min=min(ntrain)
+  ncomp=min(ncomp,ntrain.min-1)
+  #
+   error.cv=matrix(0,length(lambda),ncomp)
+
   for (i in seq(k)){
   
         omit <- all.folds[[i]]

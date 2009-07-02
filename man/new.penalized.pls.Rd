@@ -16,19 +16,19 @@ new.penalized.pls(ppls, Xtest, ytest = NULL)
   \item{ytest}{vector of new response data, optional}
 }
 \details{
-  Penalized.pls simply returns the intercepts and regression
+  \code{penalized.pls} returns the intercepts and regression
   coefficients for all penalized PLS components up to \code{ncomp} as
   specified in the function \code{penalized.pls}. \code{new.penalized.pls} then computes the estimated response
   based on these regression vectors. If \code{ytest} is given, the mean squared
   error for all components are computed as well.
 }
 \value{
-  \item{ypres}{matrix of responses}
+  \item{ypred}{matrix of responses}
   \item{mse}{vector of mean squared errors, if ytest is provided.}
 
 }
 \references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009}
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems 94, 60 - 69. }
 \author{Nicole Kr\"amer}
 
 \seealso{\code{\link{penalized.pls}}, \code{\link{penalized.pls.cv}}, \code{\link{ppls.splines.cv}}}

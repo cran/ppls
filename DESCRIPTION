@@ -2,11 +2,11 @@ Package: ppls
 Type: Package
 Title: Penalized Partial Least Squares
 Depends: splines, MASS
-Version: 1.02
-Date: 2008-07-02
-Author:  Nicole Kr\"amer <nkraemer@cs.tu-berlin.de>
-	 Anne-Laure Boulesteix <boulesteix@slcmsr.org>
-Maintainer: Nicole Kr\"amer <nkraemer@cs.tu-berlin.de>
+Version: 1.03
+Date: 2009-07-02
+Author:  Nicole Kraemer <nkraemer@cs.tu-berlin.de>
+	 Anne-Laure Boulesteix <anne-laure.boulesteix@stat.uni-muenchen.de>
+Maintainer: Nicole Kraemer <nkraemer@cs.tu-berlin.de>
 Description: This package contains linear and nonlinear regression methods based on Partial Least Squares and Penalization Techniques. 
 License:  GPL version 2 or newer
-Packaged: Tue Jul  8 17:11:22 2008; kranic
+Packaged: Fri Jan 23 19:40:27 2009; kranic

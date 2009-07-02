@@ -50,7 +50,7 @@ penalized.pls(X, y, P, ncomp, kernel, scale ,blocks,select)
     PLS with i components}
 }
 \references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, doi: 10.1016/j.chemolab.2008.06.009}
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems 94, 60 - 69.}
 \author{Nicole Kr\"amer}
 \seealso{\code{\link{new.penalized.pls}},
   \code{\link{penalized.pls.cv}}, \code{\link{ppls.splines.cv}},

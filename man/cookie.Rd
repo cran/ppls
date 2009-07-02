@@ -22,15 +22,15 @@ from 1100 to 2498 nanometers (nm) in steps of 2 nm.
 
           P.J. Brown, T. Fearn, and M. Vannucci (2001) \emph{Bayesian Wavelet Regression on Curves with Applications to a Spectroscopic Calibration Problem}. Journal of the American Statistical Association, 96, pp. 398-408. 
 
-	 B.G. Osborne, T. Fearn, A.R. Miller, and S. Douglas (1984) \emph{Application of Near-Infrared Reflectance Spectroscopy to Compositional Analysis of Biscuits and Biscuit Dough}. Journal of the Science of Food and Agriculture, 35, pp. 99 - 105.
+     B.G. Osborne, T. Fearn, A.R. Miller, and S. Douglas (1984) \emph{Application of Near-Infrared Reflectance Spectroscopy to Compositional Analysis of Biscuits and Biscuit Dough}. Journal of the Science of Food and Agriculture, 35, pp. 99 - 105.
           }
          \examples{
-	data(cookie) # load data
-	X<-as.matrix(cookie[,1:700]) # extract NIR spectra
-	Y<-as.matrix(cookie[,701:704]) # extract constituents
-	Xtrain<-X[1:40,] # extract training data
-	Ytrain<-Y[1:40,] # extract training data
-	Xtest<-X[41:72,] # extract test data
-	Ytrain<-Y[41:72,] # extract test data
-	}
+    data(cookie) # load data
+    X<-as.matrix(cookie[,1:700]) # extract NIR spectra
+    Y<-as.matrix(cookie[,701:704]) # extract constituents
+    Xtrain<-X[1:40,] # extract training data
+    Ytrain<-Y[1:40,] # extract training data
+    Xtest<-X[41:72,] # extract test data
+    Ytest<-Y[41:72,] # extract test data
+    }
           \keyword{datasets}
