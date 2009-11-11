@@ -31,7 +31,7 @@ Penalty.matrix(m,order = 2)
 to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69.
 
 
-  C. de Boor (1978) \emph{A Practical Guide to Splines}, Springer.
+C. de Boor (1978) \emph{A Practical Guide to Splines}, Springer.
 }
 \author{Nicole Kr\"amer}
 \section{Warning}{ All entries of the vector \code{m} must be larger than

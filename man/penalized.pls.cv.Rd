@@ -25,8 +25,7 @@ penalized.pls.cv(X, y, P, lambda, ncomp, k, kernel,scale)
   \item{scale}{logical value. If scale=TRUE, the X variables are
     standardized to have unit variance. Default value is FALSE}
 }
-\details{
-}
+
 \value{
    \item{error.cv}{matrix of cross-validated errors. The rows correspond to the values of lambda, the columns correspond to the number of components.}
   \item{lambda.opt }{Optimal value of lambda}
