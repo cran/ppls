@@ -4,7 +4,8 @@
 \description{plotting device for penalized PLS on splines transformed variables
 }
 \usage{
-graphic.ppls.splines(X,y,lambda,add.data,select,ncomp,deg,order,nknot,reduce.knots,kernel,window.size)
+graphic.ppls.splines(X, y, lambda, add.data, select, ncomp, deg, order,
+                     nknot, reduce.knots, kernel, window.size)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -64,7 +65,7 @@ dummy<-graphic.ppls.splines(X,y,lambda=100,ncomp=5,add.data=TRUE,select=TRUE,win
 
 # without variable selection and without data
 
-X11()
+dev.new()
 dummy<-graphic.ppls.splines(X,y,lambda=100,ncomp=5,add.data=FALSE,select=FALSE,window.size=c(3,4))
 
 }
