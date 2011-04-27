@@ -39,7 +39,9 @@ model for the columns of \code{X}, each additive component is expanded in terms 
 amount of B-Splines basis functions. The basis functions are determined
 via their \code{degree} and  \code{nknot}, the number of knots. In order to prevent
 overfitting,  the additive  model is estimated via penalized PLS, where
-the penalty term penalizes the differences of a specified \code{order}. Consult Kr\"amer, Boulesteix, and Tutz (2008) for details.
+the penalty term penalizes the differences of a specified \code{order}. Consult Kraemer, Boulesteix, and Tutz (2008) for details.
+
+A graphical tool for penalized PLS on splines-transformed data is provided by \code{\link{graphic.ppls.splines}}.
 }
 \value{
   \item{error.cv}{matrix of cross-validated errors. The rows correspond to the values of lambda, the columns correspond to the number of components.}
@@ -48,11 +50,11 @@ the penalty term penalizes the differences of a specified \code{order}. Consult 
   \item{min.ppls}{Cross-validated error for the optimal penalized PLS
     solution}
 }
-\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69.}
-\author{Nicole Kr\"amer}
+\references{N. Kraemer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69. \url{http://dx.doi.org/10.1016/j.chemolab.2008.06.009}}
+\author{Nicole Kraemer}
 
-\seealso{\code{\link{penalized.pls}},\code{\link{penalized.pls.cv}}}
+\seealso{\code{\link{penalized.pls}},\code{\link{penalized.pls.cv}}, \code{\link{graphic.ppls.splines}}}
 \examples{
 # this example does not make much sense, it only illustrates
 # how to use the functions properly

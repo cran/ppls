@@ -27,9 +27,9 @@ new.penalized.pls(ppls, Xtest, ytest = NULL)
   \item{mse}{vector of mean squared errors, if ytest is provided.}
 
 }
-\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems 94, 60 - 69. }
-\author{Nicole Kr\"amer}
+\references{N. Kraemer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems 94, 60 - 69.  \url{http://dx.doi.org/10.1016/j.chemolab.2008.06.009}}
+\author{Nicole Kraemer}
 
 \seealso{\code{\link{penalized.pls}}, \code{\link{penalized.pls.cv}}, \code{\link{ppls.splines.cv}}}
 \examples{

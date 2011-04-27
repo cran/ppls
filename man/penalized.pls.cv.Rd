@@ -28,7 +28,10 @@ penalized.pls.cv(X, y, P, lambda, ncomp, k, kernel,scale)
 
 \value{
    \item{error.cv}{matrix of cross-validated errors. The rows correspond to the values of lambda, the columns correspond to the number of components.}
+   \item{lambda}{vector of candidate parameters lambda for the amount of
+    penalization}
   \item{lambda.opt }{Optimal value of lambda}
+  \item{index.lambda}{Index for the optimal value of lambda}
   \item{ncomp.opt}{Optimal number of penalized PLS components}
   \item{min.ppls}{Cross-validated error for the optimal penalized PLS
     solution}
@@ -36,13 +39,14 @@ penalized.pls.cv(X, y, P, lambda, ncomp, k, kernel,scale)
     whole data set}
   \item{coefficients}{Regression coefficients for the optimal model,
     computed on the whole data set}
+  \item{coefficients.jackknife}{array of regression coefficients for each cross-validation run and each parameter setting. The dimension is \code{ncol(X) x ncomp x length(lambda) x k}. This result can be used to estimate the variance of the regression coefficients.}
 
 }
-\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems 94, 60 - 69.}
-\author{Nicole Kr\"amer}
+\references{N. Kraemer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems 94, 60 - 69. \url{http://dx.doi.org/10.1016/j.chemolab.2008.06.009}}
+\author{Nicole Kraemer}
 
-\seealso{\code{\link{ppls.splines.cv}},\code{\link{penalized.pls}},\code{\link{new.penalized.pls}}}
+\seealso{\code{\link{ppls.splines.cv}},\code{\link{penalized.pls}},\code{\link{new.penalized.pls}},\code{\link{jack.ppls}}}
 \examples{
 # the penalty term in this example does not make much
 # sense

@@ -23,14 +23,14 @@ penalized.pls.kernel(X, y, M, ncomp)
   representation of penalized PLS. If the number of observations
   is large with respect to the number of variables, it is
   computationally more efficient to use the function
-  \code{penalized.pls.default}.  For more details, see Kr\"amer, Boulesteix,  and Tutz (2008).
+  \code{penalized.pls.default}.  For more details, see Kraemer, Boulesteix,  and Tutz (2008).
 }
 \value{
   \item{coefficients}{Penalized PLS coefficients for all 1,2,...,ncomp compoents }
 }
-\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems 94, 60 - 69.}
-\author{Nicole Kr\"amer}
+\references{N. Kraemer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems 94, 60 - 69. \url{http://dx.doi.org/10.1016/j.chemolab.2008.06.009}}
+\author{Nicole Kraemer}
 \note{This is an internal function that is called by \code{\link{penalized.pls}}.
 
 }

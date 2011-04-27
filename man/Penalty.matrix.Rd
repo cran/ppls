@@ -22,18 +22,18 @@ Penalty.matrix(m,order = 2)
   is the second order difference. This definition is easily extended to
   other values of \code{order}. The final penalty matrix \code{P} is a
   block-diagonal matrix with the jth block equal to \eqn{P_j}.  More
-  details can be found in Kr\"amer, Boulesteix, and Tutz (2008). 
+  details can be found in Kraemer, Boulesteix, and Tutz (2008). 
 }
 \value{penalty matrix of size \code{sum(m)} x \code{sum(m)}
  
 }
-\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69.
+\references{N. Kraemer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69. \url{http://dx.doi.org/10.1016/j.chemolab.2008.06.009}
 
 
 C. de Boor (1978) \emph{A Practical Guide to Splines}, Springer.
 }
-\author{Nicole Kr\"amer}
+\author{Nicole Kraemer}
 \section{Warning}{ All entries of the vector \code{m} must be larger than
   \code{order}, as the notion of kth order differences does not make
   sense for vectors of length \eqn{\le} k. } 

@@ -48,11 +48,11 @@ the function automatically increases the number.
 }
 \references{C. de Boor (1978) \emph{A Practical Guide to Splines}, Springer.
 
-  N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69.
+  N. Kraemer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69. \url{http://dx.doi.org/10.1016/j.chemolab.2008.06.009}
 }
-\author{Nicole Kr\"amer}
-\seealso{\code{\link{ppls.splines.cv}}}
+\author{Nicole Kraemer}
+\seealso{\code{\link{ppls.splines.cv}},\code{\link{graphic.ppls.splines}}}
 \examples{
 X<-matrix(rnorm(100),ncol=5)
 Xtest<-matrix(rnorm(300),ncol=5)

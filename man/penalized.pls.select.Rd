@@ -25,7 +25,7 @@ penalized.pls.select(X, y, M, ncomp,blocks)
   as the inverse of \eqn{(I + P)} .  The
   computation of the regression coefficients is based on an extension of
   the classical NIPALS algorithm for PLS. Moreover, in each iteration,
-  the weight vector is only defined by one block of variables.  For more details, see Kr\"amer,
+  the weight vector is only defined by one block of variables.  For more details, see Kraemer,
   Boulesteix,  and Tutz (2008). 
 }
 
@@ -33,9 +33,9 @@ penalized.pls.select(X, y, M, ncomp,blocks)
   \item{coefficients}{Penalized PLS coefficients for all 1,2,...,ncomp components }
 
 }
-\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69.}
-\author{Nicole Kr\"amer}
+\references{N. Kraemer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69. \url{http://dx.doi.org/10.1016/j.chemolab.2008.06.009}}
+\author{Nicole Kraemer}
 \note{This is an internal function that is called by \code{\link{penalized.pls}}.}
 \seealso{\code{\link{penalized.pls}}, \code{\link{ppls.splines.cv}}}
 \examples{

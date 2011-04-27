@@ -13,7 +13,7 @@ penalized.pls(X, y, P, ncomp, kernel, scale ,blocks,select)
   \item{y}{vector of response data}
   \item{P}{penalty matrix. Default value is P=NULL, i.e. no penalization is
   used}
-  \item{ncomp}{number of components, default value is min(ncol(p),nrow(X)-1)}
+  \item{ncomp}{number of components, default value is the rank of the centered matrix \code{X}, that is min(ncol(X),nrow(X)-1)}
   \item{kernel}{logical value. If kernel=TRUE, penalized PLS is computed
   based on the kernel algorithm. Default value is kernel=FALSE}
   \item{scale}{logical value. If scale=TRUE, the X variables are
@@ -49,9 +49,9 @@ penalized.pls(X, y, P, ncomp, kernel, scale ,blocks,select)
     column corresponds to the regressions coefficients for penalized
     PLS with i components}
 }
-\references{N. Kr\"amer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
-to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems 94, 60 - 69.}
-\author{Nicole Kr\"amer}
+\references{N. Kraemer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
+to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems 94, 60 - 69. \url{http://dx.doi.org/10.1016/j.chemolab.2008.06.009}}
+\author{Nicole Kraemer}
 \seealso{\code{\link{new.penalized.pls}},
   \code{\link{penalized.pls.cv}}, \code{\link{ppls.splines.cv}},
   \code{\link{Penalty.matrix}}}
