@@ -6,8 +6,10 @@
   B-Spline transformations.
 }
 \usage{
-ppls.splines.cv(X, y, lambda, ncomp, degree, order, nknot, k, kernel,
-               scale, reduce.knots, select)
+ppls.splines.cv(X, y,lambda,
+ncomp, degree, order,
+nknot, k, kernel,scale,
+reduce.knots,select)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

@@ -1,4 +1,4 @@
-31a1dd9e8aabf4ecfaa1b929281740a2 *DESCRIPTION
+7306a78ef433caff523a746c2629a076 *DESCRIPTION
 ef87105827b3c8e885dd1307885341c6 *NAMESPACE
 e72440e1fd7256f39162c819d954c25c *R/Penalty.matrix.R
 d9625e0da4833e5c4af22a6545455b65 *R/X2s.R
@@ -21,7 +21,7 @@ bc238ef65bcad860dab3a6254e38a89b *man/Penalty.matrix.Rd
 8ceca61291f029fa3897626a4b767a7b *man/X2s.Rd
 77010588c53f028c30250a474683ba01 *man/coef.mypls.Rd
 d21dc74b1b1861fc868acdf1a5425608 *man/cookie.Rd
-4e92b4e90a961f89934c53fe792c0bb9 *man/graphic.ppls.splines.Rd
+1507f7325a486a7b1427c1059a49732c *man/graphic.ppls.splines.Rd
 032cde297e3e26477798d0984406a442 *man/jack.ppls.Rd
 7a32e2917c3d75720b147627461d739c *man/new.penalized.pls.Rd
 82a86216f6be0acc4f4d10c2b3c10141 *man/normalize.vector.Rd
@@ -30,8 +30,8 @@ bf3efa5fd49cfb7b6ffbdcaefd19b79d *man/penalized.pls.cv.Rd
 832f96456d5adbaf7a90ad2c307029ff *man/penalized.pls.default.Rd
 644e228beae803824ba2fe5693b61547 *man/penalized.pls.kernel.Rd
 455602eeb19602ecda60db9f371fd384 *man/penalized.pls.select.Rd
-66ffbb00b5db3b7c110d3634692ce16a *man/ppls-package.Rd
-95edda0c212a573361120d75a9fb512e *man/ppls.splines.cv.Rd
+065bb322a5a834f64cf29a4791aaff6a *man/ppls-package.Rd
+ee21c38bb2e5b88f03793db7347bc868 *man/ppls.splines.cv.Rd
 bf730137182f32339dd57cb4a4ee8521 *man/sim.data.ppls.Rd
 9b53eea65bb42f07e0f711407cfbe1dd *man/ttest.ppls.Rd
 82f721c01056722ba7973f11155fb8bc *man/vcov.mypls.Rd
