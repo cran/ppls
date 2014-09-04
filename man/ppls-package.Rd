@@ -25,7 +25,7 @@ details can be found in Kraemer, Boulesteix, and Tutz (2008).
 
 The package also contains a data set from Near-Infrared Spectroscopy (Osborne et.al., 1984).
 }
-\author{Nicole Kraemer <nicole.kraemer@tum.de>
+\author{Nicole Kraemer <kraemer_r_packages@yahoo.de>
 }
 \references{N. Kraemer, A.-L. Boulsteix, and G. Tutz (2008). \emph{Penalized Partial Least Squares with Applications
 to B-Spline Transformations and Functional Data}. Chemometrics and Intelligent Laboratory Systems, 94, 60 - 69. \url{http://dx.doi.org/10.1016/j.chemolab.2008.06.009}
