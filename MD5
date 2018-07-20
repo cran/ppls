@@ -1,5 +1,5 @@
-b5d8fcdeee41decf32e162f8e2087cfe *DESCRIPTION
-ef87105827b3c8e885dd1307885341c6 *NAMESPACE
+91f427131864ae2a5825d252af673e4b *DESCRIPTION
+7ca08c36c57ffa395781f77461bb0afb *NAMESPACE
 e72440e1fd7256f39162c819d954c25c *R/Penalty.matrix.R
 d9625e0da4833e5c4af22a6545455b65 *R/X2s.R
 0add400aa33fc8221b6b89f4bc7984c9 *R/coef.mypls.R
@@ -16,7 +16,7 @@ bb5f96fe5eea9597be398fa4cc7e5f0c *R/penalized.pls.kernel.R
 356b1ba50c040fdedab43f28068f592b *R/sim.data.ppls.R
 44cc211abfcb58eb6c22dd7b68d66e93 *R/ttest.ppls.R
 3b035b66246644b9d8635220527f8d0c *R/vcov.mypls.R
-a07dab5b275645f1e48915e2554bee7e *data/cookie.rda
+d375f16d6cddfd69288826beeb56e27a *data/cookie.rda
 8f0783243b08aa23997c69153a4d1b03 *inst/CITATION
 ed5e8b3ee0d0f4db7aedd92845376a15 *inst/ChangeLog
 bc238ef65bcad860dab3a6254e38a89b *man/Penalty.matrix.Rd
