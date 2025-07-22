@@ -1,18 +1,14 @@
-citHeader("To cite ppls in publications please use:")
-
-citEntry(entry = "Article",
-  title        = "Penalized Partial Least Squares with Applications to B-Spline Transformations and Functional Data",
-  author       = personList(as.person("N. Kraemer"),
-                   as.person("N. Kraemer"),as.person("A.-L. Boulesteix"),as.person("G. Tutz")),
-  journal      = "Chemometrics and Intelligent Laboratory Systems",
-  year         = "2008",
-  volume       = "94",
-  number       = "60-69",  
-
-  textVersion  =
-  paste("N. Kraemer, A.-L. Boulesteix, G. Tutz (2008).",
-        "Penalized Partial Least Squares with Applications to B-Spline Transformations and Functional Data",
-        "Chemometrics and Intelligent Laboratory Systems 94 (60-69)"
-        )
+bibentry(
+  bibtype = "Article",
+  title = "Penalized Partial Least Squares with Applications to B-Spline Transformations and Functional Data",
+  author = c(
+    person(given = "Nicole", family = "Kraemer"),
+    person(given = "Anne-Laure", family = "Boulesteix"),
+    person(given = "Gerhard", family = "Tutz")
+  ),
+  journal = "Chemometrics and Intelligent Laboratory Systems",
+  year = "2008",
+  volume = "94",
+  pages = "60–69",
+  doi = "10.1016/j.chemolab.2008.06.009"
 )
-

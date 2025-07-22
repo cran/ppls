@@ -1,0 +1,34 @@
+#' Near-Infrared (NIR) Spectroscopy of Biscuit Doughs
+#'
+#' This dataset contains measurements from a quantitative NIR spectroscopy experiment designed to evaluate the feasibility of using NIR spectra to estimate the chemical composition of unbaked biscuit doughs.
+#'
+#' Two sets of samples were prepared with variations in a standard biscuit recipe to produce a broad range for each of the four ingredients of interest: fat, sucrose, dry flour, and water.
+#'
+#' The first 40 samples correspond to a calibration (training) set, and the remaining 32 samples form a validation (prediction) set. Sample 23 (training) and sample 21 (test) are known outliers.
+#'
+#' Each sample is represented by an NIR reflectance spectrum composed of 700 values measured between 1100 and 2498 nanometers, at 2 nm intervals. The last 4 columns represent the percentage of each constituent.
+#'
+#' @name cookie
+#' @format A list of 2 data-frames of 72 observations:
+#' \describe{
+#'   \item{NIR}{NIR reflectance spectrum values from 1100 to 2498 nm on 700 columns.}
+#'   \item{constituents}{Percentage of fat, sucrose, dry flour and water in the 72 samples.}
+#' }
+#'
+#' @usage data(cookie)
+#'
+#' @references
+#' \itemize{
+#'   \item P.J. Brown, T. Fearn, and M. Vannucci (2001). \emph{Bayesian Wavelet Regression on Curves with Applications to a Spectroscopic Calibration Problem}. Journal of the American Statistical Association, 96, pp. 398–408.
+#'   \item B.G. Osborne, T. Fearn, A.R. Miller, and S. Douglas (1984). \emph{Application of Near-Infrared Reflectance Spectroscopy to Compositional Analysis of Biscuits and Biscuit Dough}. Journal of the Science of Food and Agriculture, 35, pp. 99–105.
+#' }
+#'
+#' @examples
+#' data(cookie) # load data
+#' X <- cookie$NIR       # NIR spectra
+#' Y <- cookie$constituents     # constituent values
+#' Xtrain <- X[1:40, ]; Ytrain <- Y[1:40, ]   # calibration set
+#' Xtest <- X[41:72, ]; Ytest <- Y[41:72, ]   # validation set
+#'
+#' @keywords datasets
+"cookie"
